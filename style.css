@@ -7,9 +7,17 @@
 }
 
 .target {
-   position: absolute;
-   height: 20px;
-   width: 20px;
-   background-color: green;
-     
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: solid black 1px;
+    background-color: red;
+    animation-name: colorChange;
+    animation-duration: 3s;
+
+}
+@keyframes colorChange {
+    0%   {background-color: green;}
+    40%  {background-color: yellow;}
+    60%  {background-color: orange;}
 }
