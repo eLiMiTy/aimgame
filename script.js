@@ -9,13 +9,14 @@ $(document).ready(function(){
   var w8 = 0;
   var gameOver = false;
 
+  // damit nicht direckt ins spiel geworfen wir sobald die seite geladen hat habe ich einen button hinzugefüght dem es den spieler ermöglicht das spiel nach belieben zu starten.
  $('#button').click(function() {
     $(this).remove();
     spawning();
     buttonClick = true
   });
 
-
+//die funktion die das Leben des spielers abzieht.
   function dmg() {
     if (life == 3) {
       life = life - 1
@@ -33,7 +34,7 @@ $(document).ready(function(){
     }
   }
 
-
+// Hier werden die Div also die vierecke erstellt auf die man später klicken muss
   function spawning() {
     if (buttonClick == true) {
     	var t = Math.floor(Math.random() * 94) + 2; 
@@ -49,7 +50,7 @@ $(document).ready(function(){
     }
   }
 
-  
+// ist dafür gedacht die vierecke zu entfernen die zulange nicht angeklickt wurden. außerdem sollen sie dann die schaden methode ausführen falls das der fall ist
   function decay() {
       console.log("decay");
       $(".target#"+j).remove(); 
@@ -60,7 +61,7 @@ $(document).ready(function(){
         
 
   }
-
+  //hier ist der Game loop dieser wird jeder sekunde ausgeführt. und soll sollange laufen bis der spieler kein leben mehr hat.
   if (gameOver == true) {
       console.log("game Over");
   }else if(gameOver == false){
